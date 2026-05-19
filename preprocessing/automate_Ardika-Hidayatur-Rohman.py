@@ -31,12 +31,12 @@ def run_preprocessing():
         ])
     
     X_processed = preprocessor.fit_transform(X)
-    
-    df_processed = X_processed.copy()
+    feature_names = preprocessor.get_feature_names_out()
+    df_processed = pd.DataFrame(X_processed, columns=feature_names)
     df_processed['Survived'] = y.values
     
     save_path = 'titanic_processed.csv'
     df_processed.to_csv(save_path, index=False)
 
 if __name__ == "__main__":
-    run_preprocessing() 
+    run_preprocessing()
