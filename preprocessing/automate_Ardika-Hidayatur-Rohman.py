@@ -10,7 +10,6 @@ def run_preprocessing():
     
     X = df_clean.drop('Survived', axis=1)
     y = df_clean['Survived']
-    
     numeric_features = ['Pclass', 'Age', 'SibSp', 'Parch', 'Fare']
     categorical_features = ['Sex', 'Embarked']
     
