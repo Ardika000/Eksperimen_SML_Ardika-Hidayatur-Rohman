@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
@@ -34,7 +35,8 @@ def run_preprocessing():
     df_processed = pd.DataFrame(X_processed, columns=feature_names)
     df_processed['Survived'] = y.values
     
-    save_path = 'titanic_processed.csv'
+    os.makedirs('preprocessing', exist_ok=True)
+    save_path = 'preprocessing/titanic_processed.csv'
     df_processed.to_csv(save_path, index=False)
 
 if __name__ == "__main__":
