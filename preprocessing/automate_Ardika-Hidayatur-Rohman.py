@@ -39,4 +39,4 @@ def run_preprocessing():
     df_processed.to_csv(save_path, index=False)
 
 if __name__ == "__main__":
-    run_preprocessing()
+    run_preprocessing() 
