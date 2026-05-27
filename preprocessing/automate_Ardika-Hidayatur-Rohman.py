@@ -36,7 +36,7 @@ def run_preprocessing():
     df_processed['Survived'] = y.values
     
     os.makedirs('preprocessing', exist_ok=True)
-    save_path = 'preprocessing/titanic_processed.csv'
+    save_path = 'preprocessing/titanic_preprocessing.csv'
     df_processed.to_csv(save_path, index=False)
 
 if __name__ == "__main__":
